@@ -45,7 +45,8 @@
   };
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.ly.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
@@ -105,16 +106,33 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+     # bare essentials
      git 
-    
      wget
-     helix
-     alacritty
-     neofetch
-     dust
+     curl
 
+     helix
+     gh
+
+     # CLI utilities
+     bat
+     dust
+     fd
+     ripgrep
+     ripgrep-all
+     tokei
+     watchexec 
+
+     # CLI fluff
+     neofetch
+
+     # CLI fluff
+
+     # keyboard remapping
      kanata
+
+     alacritty
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

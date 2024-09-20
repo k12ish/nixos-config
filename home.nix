@@ -68,8 +68,17 @@
   #  /etc/profiles/per-user/krish/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "hx";
   };
+
+  programs.git = {
+    enable = true;
+    userName = "Krish Shah";
+    userEmail = "k4krish@gmail.com";
+  };
+
+  programs.zoxide.enable = true;
+  programs.zoxide.enableBashIntegration = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
