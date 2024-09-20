@@ -79,6 +79,7 @@
 
   programs.zoxide.enable = true;
   programs.zoxide.enableBashIntegration = true;
+  programs.bash.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

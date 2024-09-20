@@ -126,12 +126,22 @@
      # CLI fluff
      neofetch
 
-     # CLI fluff
-
      # keyboard remapping
      kanata
 
+     syncthing
+
+     # Desktop Apps
      alacritty
+     syncthingtray
+     gnome-disk-utility # interactive format / partition
+     baobab # view file trees interactively
+     obsidian
+
+     mpv
+     mpvScripts.mpris # media keys for mpv
+
+     eog # eye of gnome image viewer
 
   ];
 
@@ -159,6 +169,15 @@
       '';
     };
   };
+
+  services.syncthing = {
+    enable = true;
+    user = "krish";
+    dataDir = "/home/krish/Documents";  # Default folder for new synced folders
+    configDir = "/home/krish/.config/syncthing";  # Folder for Syncthing's settings and keys
+    systemService = true;
+  };
+
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
