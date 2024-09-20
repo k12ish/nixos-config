@@ -111,7 +111,6 @@
      wget
      curl
 
-     helix
      gh
 
      # CLI utilities

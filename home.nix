@@ -68,13 +68,32 @@
   #  /etc/profiles/per-user/krish/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "hx";
   };
 
   programs.git = {
     enable = true;
     userName = "Krish Shah";
     userEmail = "k4krish@gmail.com";
+  };
+
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
+    settings = {
+      # theme = "monokai";
+      editor = {
+        auto-save = true;
+        idle-timeout=100;
+        color-modes=true;
+        soft-wrap = {
+          enable = true;
+          max-indent-retain = 0;
+        };
+      };
+      keys.normal = {
+        G = "goto_file_end";
+      };
+    };
   };
 
   programs.zoxide.enable = true;
