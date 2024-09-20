@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -85,9 +85,15 @@
     description = "krish";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
+      anki-bin
     ];
+  };
+
+  home-manager = {
+    extraSpecialArgs = {inherit inputs; };
+    users = {
+      "krish" = import ./home.nix;
+    };
   };
 
   # Install firefox.
@@ -106,7 +112,6 @@
      helix
      alacritty
      neofetch
-     anki-bin
      dust
 
      kanata
